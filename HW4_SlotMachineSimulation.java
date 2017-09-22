@@ -51,9 +51,10 @@ The user will enter an integer for the number of hours used
 import java.util.Scanner;
 import java.io.*;
 import java.util.Random;
+import java.io.IOException;
 
 public class HW4_SlotMachineSimulation{
-   public static void main(String [] args) throws IOException{ 
+   public static void main(String[] args) throws  IOException{ 
 	   
 	   int fruitGuess;
 	   int bet;
@@ -64,6 +65,9 @@ public class HW4_SlotMachineSimulation{
 	   
 	   //create an scanner object to read in values from the user
 	   Scanner keyboard = new Scanner(System.in);
+	   Scanner input = new Scanner(userFile);
+	   PrintWriter outputFile = new PrintWriter("output.txt");
+	   File userFile = new File("input.txt");
 	   //for the random pick
 	   Random random = new Random();
 	   
@@ -76,9 +80,6 @@ public class HW4_SlotMachineSimulation{
 	   
 	   
 	   //This is allowing us to write to the output file
-	   PrintWriter outputFile = new PrintWriter("output.txt");
-	   File userFile = new File("input.txt");
-	   Scanner input = new Scanner(userFile);
 	   System.out.println("Welcome to Guanyu Tian's Slot Machine");
 	   
 	   // read the first line of the file to determine the amount of money the user has
